@@ -7,9 +7,11 @@ import { getUserAverageSessions } from '../services/APICall';
 import AverageSessionsChartTool from './AverageSessionsChartTool';
 
 const Container = styled.div`
+	display : block
 `;
 
 const Title = styled.h2`
+	display : block
 `;
 
 export default function AverageSessionsChart({ id }) {

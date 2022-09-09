@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { USER_MAIN_DATA } from "./APIMock";
+
 
 const instance = axios.create({
 	baseURL: 'http://localhost:3000/user',
@@ -12,8 +14,14 @@ const instance = axios.create({
  */
  export const getUserInfos = async (id) => {
 	try {
-		const res = await instance.get(`/${id}`);
-		return res.data;
+		if (process.env.NODE_ENV == "production"){
+			const res = await instance.get(`/${id}`);
+			return res.data;
+		} else {
+			let data = USER_MAIN_DATA.find (el => el.id == id); 
+			return data
+		}
+		
 	} catch (e) {
 		console.log(e);
 	}

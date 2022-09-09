@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const CustomTool = styled.div`
+	display : block
 `;
 
 export default function AverageSessionsChartTool({ active, payload }) {

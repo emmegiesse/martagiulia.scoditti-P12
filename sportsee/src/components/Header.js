@@ -4,9 +4,11 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const CustomHeader = styled.header`
+	display : block
 `;
 
 const Nav = styled.nav`
+	display : block
 `;
 
 export default function Header() {

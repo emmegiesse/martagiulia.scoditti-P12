@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { RadarChart,PolarGrid,Radar,PolarAngleAxis,ResponsiveContainer } from 'recharts';
 import styled from 'styled-components';
 
-import { getUserPerformance } from '../services/api.js';
+import { getUserPerformance } from '../services/APICall.js';
 
 const Container = styled.div`
 `;

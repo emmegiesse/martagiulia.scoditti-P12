@@ -3,15 +3,19 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const Nav = styled.nav`
+  display : block
 `;
 
 const SideBar = styled.div`
+  display : block
 `;
 
 const IconLink = styled(NavLink)`
+  display : block
 `;
 
 const Copyright = styled.p`
+  display : block 
 `;
 
 export default function IconBar() {

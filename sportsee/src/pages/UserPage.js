@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -7,16 +8,22 @@ import Dashboard from '../components/Dashboard';
 
 const Container = styled.div`
 `;
+export default function UserPage() {
+	let {id} = useParams (); 
+	const [user, setUser] = React.useState (null); 
 
-export default function UserPage({ match }) {
+	/*React.useEffect (() => {
+		if (!id) {
+			// setUser used id:12
+		} else {
+			// setUser used id
+		}
+	}, [id]);*/
+		
 	return (
-		<Container>
+		<div>
 			<IconBar />
-			<Dashboard match={match} />
-		</Container>
+			<Dashboard id={id} />
+		</div>
 	);
 }
-
-UserPage.protTypes = {
-	match: PropTypes.array.isRequired,
-};
