@@ -46,8 +46,6 @@ async function getUserActivity(id) {
 			return response.data.data;
 		} else {
 			let data = USER_ACTIVITY.find (el => el.userId == id); 
-            //console.log (data)
-            //console.log (USER_ACTIVITY)
 			return data
 		}
 	} catch (error) {
@@ -67,8 +65,6 @@ async function getUserAverageSessions(id) {
 			return response.data.data;
 		} else {
 			let data = USER_AVERAGE_SESSIONS.find (el => el.userId == id); 
-            //console.log (data)
-            //console.log (USER_AVERAGE_SESSIONS)
 			return data
 		}
     } catch (error) {
@@ -88,8 +84,6 @@ async function getUserPerformance(id) {
             return response.data.data;
         } else {
             let data = USER_PERFORMANCE.find (el => el.userId == id); 
-            //console.log (data)
-            //console.log (USER_PERFORMANCE)
             return data
         }
     } catch (error) {

@@ -18,14 +18,12 @@ import ActivityBarChartTooltip from './ActivityBarChartTooltip';
 */
 
 export default function ActivityBarChart({ id }) {
-	console.log (id)
-	const [activity, setActivity] = useState(); //state data
+	const [activity, setActivity] = useState(); 
 
     useEffect(() => {
         async function APICall() {
             const activityData = await getUserActivity(id);
 			setActivity(activityData.sessions);
-            //console.log (activityData)
 		};
 		APICall();
 	}, [id]);

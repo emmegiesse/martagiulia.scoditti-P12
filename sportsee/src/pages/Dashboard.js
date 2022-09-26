@@ -13,9 +13,9 @@ import ScoreChart from "../components/ScoreChart";
 import KeyData from  "../components/KeyData";
 
 export default function Dashboard() {
-    const {userId} = useParams(); //récupère id de l'url
-    const [mainData, setMainData] = useState(); //state data
-    const [isLoaded, setIsLoaded] = useState(false); //conditional state
+    const {userId} = useParams(); 
+    const [mainData, setMainData] = useState(); 
+    const [isLoaded, setIsLoaded] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -23,8 +23,6 @@ export default function Dashboard() {
             try {
                 const mainData = await getUserInfos(userId);
                 setMainData(mainData);
-                console.log (mainData)
-                //console.log (mainData.keyData.calorieCount)
                 setIsLoaded(true);
             } catch (error) {
                 navigate("/404")

@@ -17,7 +17,7 @@ import { getUserPerformance } from '../services/APICall.js';
 */
     
 export default function PerformanceChart({ id }) {
-    const [performance, setPerformance] = useState() //state data
+    const [performance, setPerformance] = useState() 
         
     useEffect(() => {
         async function APICall() {
@@ -41,7 +41,6 @@ export default function PerformanceChart({ id }) {
                 }
             });
             setPerformance(formatedData);
-            console.log (formatedData)
         };
         APICall();
     }, [id]);

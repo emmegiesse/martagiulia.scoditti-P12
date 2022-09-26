@@ -30,6 +30,7 @@ const PageHeader = styled.header`
 	img {
 		width: 178px;
 		margin-right: 150px;
+		margin-top: 14px;
 		@media (max-width: 1025px) {
 			margin-right: 70px;
 		}

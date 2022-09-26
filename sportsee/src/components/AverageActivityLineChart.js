@@ -20,7 +20,7 @@ import AverageActivityLineChartTooltip from "./AverageSessionsChartTool";
 */
 
 export default function AverageActivityLineChart({ id }) {
-	const [averageSession, setAverageSession] = useState(); //state data
+	const [averageSession, setAverageSession] = useState(); 
 
     useEffect(() => {
         async function APICall() {
@@ -46,7 +46,6 @@ export default function AverageActivityLineChart({ id }) {
 				}
 			});
             setAverageSession(formatedData);
-            //console.log (formatedData)
 		};
 		APICall();
 	}, [id]);
