@@ -1,73 +1,106 @@
 import axios from 'axios';
-import { USER_MAIN_DATA } from "./APIMock";
-
+import { USER_MAIN_DATA } from './APIMock';
+import { USER_ACTIVITY } from './APIMock';
+import { USER_AVERAGE_SESSIONS } from './APIMock';
+import { USER_PERFORMANCE } from './APIMock';
 
 const instance = axios.create({
-	baseURL: 'http://localhost:3000/user',
+    method: "GET",
+    baseURL: 'http://localhost:3000/',
 });
 
 /**
- * Gets user infos from the API
- *
- * @param {string} id User id
- * @returns {object} Response
- */
- export const getUserInfos = async (id) => {
+* Gets user infos from the API
+* @param {string} id - > User id
+* @returns {object} - > Response
+*/
+async function getUserInfos(id) {
+    let data = null
+    try {
+        if (process.env.NODE_ENV == "production"){
+            const response = await instance.get(`user/${id}`);
+            data = response.data.data
+        } else {
+            data = USER_MAIN_DATA.find (el => el.id == id); 
+        }
+        if (data) {
+            return data 
+        } else {
+            throw new Error("404")
+        }
+    } catch (error) {
+        console.log(error);
+        throw error
+    }
+};
+
+/**
+* Gets user activity infos from the API
+* @param {string} id - > User id
+* @returns {object} - > Response
+*/
+async function getUserActivity(id) {
 	try {
 		if (process.env.NODE_ENV == "production"){
-			const res = await instance.get(`/${id}`);
-			return res.data;
+		    const response = await instance.get(`user/${id}/activity`);
+			return response.data.data;
 		} else {
-			let data = USER_MAIN_DATA.find (el => el.id == id); 
+			let data = USER_ACTIVITY.find (el => el.userId == id); 
+            //console.log (data)
+            //console.log (USER_ACTIVITY)
 			return data
 		}
-		
-	} catch (e) {
-		console.log(e);
+	} catch (error) {
+	    console.log(error);
 	}
 };
 
 /**
- * Gets user performance from the API
- *
- * @param {string} id User id
- * @returns {object} Response
- */
- export const getUserPerformance = async (id) => {
+* Gets user average sessions infos from the API
+* @param {string} id - > User id
+* @returns {object} - > Response
+*/
+async function getUserAverageSessions(id) {
 	try {
-		const res = await instance.get(`/${id}/performance`);
-		return res.data;
-	} catch (e) {
-		console.log(e);
+		if (process.env.NODE_ENV == "production"){
+			const response = await instance.get(`user/${id}/average-sessions`);
+			return response.data.data;
+		} else {
+			let data = USER_AVERAGE_SESSIONS.find (el => el.userId == id); 
+            //console.log (data)
+            //console.log (USER_AVERAGE_SESSIONS)
+			return data
+		}
+    } catch (error) {
+		console.log(error);
 	}
 };
 
 /**
- * Gets user activity from the API
- *
- * @param {string} id User id
- * @returns {object} Response
- */
- export const getUserActivity = async (id) => {
-	try {
-		const res = await instance.get(`/${id}/activity`);
-		return res.data;
-	} catch (e) {
-		console.log(e);
-	}
+* Gets user performance infos from the API
+* @param {string} id - > User id
+* @returns {object} - > Response
+*/
+async function getUserPerformance(id) {
+    try {
+        if (process.env.NODE_ENV == "production"){
+            const response = await instance.get(`user/${id}/performance`);
+            return response.data.data;
+        } else {
+            let data = USER_PERFORMANCE.find (el => el.userId == id); 
+            //console.log (data)
+            //console.log (USER_PERFORMANCE)
+            return data
+        }
+    } catch (error) {
+        console.log(error);
+    }
 };
 
-/**
- * Gets user average sessions from the API
- *
- * @param {string} id User id
- * @returns {object} Response
- */
- export const getUserAverageSessions = async (id) => {
-	try {
-		const res = await instance.get(`/${id}/average-sessions`);
-		return res.data;
-	} catch (e) {
-		console.log(e);
-	}
+export { 
+    getUserInfos, 
+    getUserActivity, 
+    getUserAverageSessions, 
+    getUserPerformance
 };
+

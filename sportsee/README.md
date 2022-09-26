@@ -2,13 +2,28 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Prerequisites 
+
+Node JS version required v16.16.0
+npm version required 8.11.0
+launch with VisualStudio 
+[Clone backEnd](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard) and follow instructions on the repository 
+
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode (with mocked data).\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm start:prod`
+
+Runs the app in the production mode (with API connexion).\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
