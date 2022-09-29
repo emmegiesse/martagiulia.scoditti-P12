@@ -105,6 +105,10 @@ const BarChartContainer = styled.div`
 	background-color: #fbfbfb;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 	padding: 25px;
+	@media (max-width: 1025px) {
+        height: 260px;
+		width: 666px;
+    }
 `;
 
 const BarChartHeader = styled.header`
@@ -114,6 +118,10 @@ const BarChartHeader = styled.header`
 		font-weight: 500;
 		font-size: 15px;
 		color: #20253a;
+		@media (max-width: 1025px) {
+			font-weight: 400;
+			font-size: 12px;
+		}
 	}
 `;
 
@@ -129,6 +137,10 @@ const Text = styled.p`
 	font-size: 14px;
 	color: #74798c;
 	margin-left: 10px;
+	@media (max-width: 1025px) {
+		font-weight: 400;
+		font-size: 12px;
+	}
 `;
 
 const Dot = styled.div`

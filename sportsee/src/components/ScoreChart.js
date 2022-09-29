@@ -66,6 +66,10 @@ const Container = styled.div`
 	background: #fbfbfb;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 	border-radius: 5px;
+	@media (max-width: 1025px) {
+        height: 210px;
+		width: 210px;
+    }
 	h2 {
 		position: absolute;
 		top: 25px;

@@ -81,4 +81,8 @@ const Container = styled.div`
 	background: #282d30;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 	border-radius: 5px;
+    @media (max-width: 1025px) {
+        height: 210px;
+		width: 210px;
+    }
 `;

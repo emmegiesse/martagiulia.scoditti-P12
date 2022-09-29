@@ -87,37 +87,49 @@ const Loader = styled.div`
 `;
 
 const Container = styled.div`
-  max-width: 1240px;
-  width: 100%;
+    max-width: 1240px;
+    width: 100%;
 `;
 
 const Content = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-left: 200px;
-  aside {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 835px;
-    flex-direction: column;
-    height: 670px;
-    margin: auto;
-    margin-left: 2rem;
-    > div {
-      margin: 20px 5px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 200px;
+    @media (max-width: 1025px) {
+        margin-left: 130px;
+        justify-content: flex-start;
     }
-  }
+    aside {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 835px;
+        flex-direction: column;
+        height: 670px;
+        margin: auto;
+        margin-left: 2rem;
+        @media (max-width: 1025px) {
+            display: flex;
+            margin-left: 10px;
+            height: auto;
+        }
+        > div {
+            margin: 20px 5px;
+        }
+    }
 `;
 
 const SmallChartsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2em;
-  justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+    justify-content: space-between;
+    @media (max-width: 1025px) {
+        grid-gap: 1.2em;
+    }
 `;
 
 

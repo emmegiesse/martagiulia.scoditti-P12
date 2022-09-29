@@ -37,12 +37,25 @@ const NutritionData = styled.div`
     height: 124px;
     background: #FBFBFB;
     border-radius: 5px;
+    @media (max-width: 1025px) {
+        width: 180px;
+        height: 80px;
+        padding: 1.2rem;
+    }
+    img {
+        @media (max-width: 1025px) {
+            width: 50px;
+        }
+    }
 `;
 
 const UserNutritionData = styled.div`
     display:flex;
     flex-direction:column;
     margin-left:24px;
+    @media (max-width: 1025px) {
+        margin-left:15px;
+    }
 `;
 
 const UserData = styled.p`
@@ -51,6 +64,9 @@ const UserData = styled.p`
     line-height: 24px;
     color: #282D30;
     margin-bottom:2px;
+    @media (max-width: 1025px) {
+        font-size: 16px;
+    }
 `;
 
 const NutCategory = styled.p`
@@ -58,5 +74,8 @@ const NutCategory = styled.p`
     font-size: 14px;
     line-height: 24px;
     color: #74798C;
+    @media (max-width: 1025px) {
+        font-size: 12px;
+    }
 `;
 

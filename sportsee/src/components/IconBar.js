@@ -42,7 +42,10 @@ const Nav = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    @media (max-width: 1025px) {
+        width: 85px;
+        height: 100vh;
+    }
 `;
 
 const SideBar = styled.div`
@@ -53,11 +56,20 @@ const SideBar = styled.div`
     position: absolute;
     top: 30%;
     left: 26px;
+    img {
+        @media (max-width: 1025px) {
+            width: 50px;
+            margin-left: -8px;
+        }
+    }
     a {
         display: flex;
         height: 64px;
         width: 64px;
         margin-bottom: 20px;
+        @media (max-width: 1025px) {
+            margin-bottom: 0px;
+        }
     }
 `;
 
@@ -73,4 +85,11 @@ const Copyright = styled.p`
     line-height: 24px;
     color: white;
     margin: auto;
+    @media (max-width: 1025px) {
+        left: 28px;
+        font-size: 10px;
+    }
+    img {
+        margin: 0;
+    }
 `;

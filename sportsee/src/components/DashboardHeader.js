@@ -20,7 +20,10 @@ DashboardHeader.propTypes = {
 export default DashboardHeader;
     
 const UserDashboardHeader = styled.header`
-    margin: 40px 0 25px 200px;    
+    margin: 40px 0 25px 200px;  
+    @media (max-width: 1025px) {
+        margin: 30px 0 45px 140px;  
+    }
     h1 {
         font-weight: 500;
         font-size: 48px;
@@ -28,9 +31,17 @@ const UserDashboardHeader = styled.header`
         span {
             color: #ff0000;
         }
+        @media (max-width: 1025px) {
+            font-weight: 500;
+            font-size: 30px;  
+            padding-bottom: 15px;
+        }
     }
     p {
         font-size: 15px;
         font-weight: 200;
+        @media (max-width: 1025px) {
+            font-size: 13px;  
+        }
     }
 `;

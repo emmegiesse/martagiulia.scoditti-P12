@@ -108,6 +108,10 @@ const LineChartContainer = styled.div`
     background: #ff0000;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
     border-radius: 5px;
+	@media (max-width: 1025px) {
+        height: 210px;
+		width: 210px;
+    }
 `;
 
 const LineChartTitle = styled.h2`
@@ -116,6 +120,9 @@ const LineChartTitle = styled.h2`
     font-size: 15px;
     padding: 29px 34px 0 34px;
     color: rgba(255, 255, 255, 0.7);
+	@media (max-width: 1025px) {
+        font-size: 12px;
+    }
 `;
 
 
