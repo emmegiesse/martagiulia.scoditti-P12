@@ -7,6 +7,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Node JS version required v16.16.0
 npm version required 8.11.0
 launch with VisualStudio 
+dependencies needed: 
+    "axios": "^0.27.2" 
+    "dotenv": "^16.0.2" 
+    "env-cmd": "^10.1.0" 
+    "react": "^18.2.0" 
+    "react-dom": "^18.2.0" 
+    "react-router-dom": "^6.3.0"  
+    "react-scripts": "5.0.1"
+    "recharts": "^2.1.14"
+    "styled-components": "^5.3.5"
+    "web-vitals": "^2.1.4"
+
 [Clone backEnd](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard) and follow instructions on the repository 
 
 ## Available Scripts
@@ -21,7 +33,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm start:prod`
+### `npm run start:prod`
 
 Runs the app in the production mode (with API connexion).\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
