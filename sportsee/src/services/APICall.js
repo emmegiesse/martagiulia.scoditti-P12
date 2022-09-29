@@ -9,6 +9,8 @@ const instance = axios.create({
     baseURL: 'http://localhost:3000/',
 });
 
+let environment = process.env.REACT_APP_ENV;
+
 /**
 * Gets user infos from the API
 * @param {string} id - > User id
@@ -17,7 +19,7 @@ const instance = axios.create({
 async function getUserInfos(id) {
     let data = null
     try {
-        if (process.env.NODE_ENV == "production"){
+        if (environment === "prod"){
             const response = await instance.get(`user/${id}`);
             data = response.data.data
         } else {
@@ -41,7 +43,7 @@ async function getUserInfos(id) {
 */
 async function getUserActivity(id) {
 	try {
-		if (process.env.NODE_ENV == "production"){
+		if (environment === "prod"){
 		    const response = await instance.get(`user/${id}/activity`);
 			return response.data.data;
 		} else {
@@ -60,7 +62,7 @@ async function getUserActivity(id) {
 */
 async function getUserAverageSessions(id) {
 	try {
-		if (process.env.NODE_ENV == "production"){
+		if (environment === "prod"){
 			const response = await instance.get(`user/${id}/average-sessions`);
 			return response.data.data;
 		} else {
@@ -79,7 +81,7 @@ async function getUserAverageSessions(id) {
 */
 async function getUserPerformance(id) {
     try {
-        if (process.env.NODE_ENV == "production"){
+        if (environment === "prod"){
             const response = await instance.get(`user/${id}/performance`);
             return response.data.data;
         } else {
